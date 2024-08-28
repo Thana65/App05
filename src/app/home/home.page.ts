@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private detail: NavController) {}
 
 items=[
   {
@@ -39,5 +40,9 @@ items=[
     imageURL: 'https://occ-0-8407-2219.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABT-ts35ADL7SiYs55RSw8Vo9w8iSREkyFQVTh_9JxpB1t5v55rhTW6uz0AXRGjTCRdlQXqUdTeV0vo7-Ec7nlilvK-jKwcVQbWZv.jpg?r=509',
   },
 ]
+
+gotoDetail(i:any){
+  this.detail.navigateForward('/detail',{state:{i}})
+}
 
 }
